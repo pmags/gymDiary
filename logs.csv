@@ -1,4 +1,4 @@
-User,Date,Time,Exercise,Routine,Saved routine?,routine series,routine repetitions,Routine duration,Routine Timecap,series,repetitions,duration,simple exercice? ,compound exercise?,weight,equipment
-Rambo,17-05-2021,09:00:00,Pull ups,Upper Body,yes,3,5,na,na,3,5,na,yes,no,0,
-Stalone,17-05-2021,09:00:00,Militar press,Get fit 2021,yes,3,5,na,na,3,5,na,yes,no,15,
-John Lennon,18-05-2021,22:00:00,Burpees,18/05/2021 Workout,no,3,20,na,na,3,20,na,yes,no,na,
+User,Date,Time,Exercise,Routine,Saved routine?,routine name,routine series,routine repetitions,Routine duration,Routine Timecap,series,repetitions,duration,simple exercice? ,compound exercise?,weight,equipment
+Rambo,17-05-2021,09:00:00,Pull ups,Upper Body,yes,legs,3,5,na,na,3,5,na,yes,no,0,
+Stalone,17-05-2021,09:00:00,Militar press,Get fit 2021,yes,legs,3,5,na,na,3,5,na,yes,no,15,
+John Lennon,18-05-2021,22:00:00,Burpees,18/05/2021 Workout,no,legs,3,20,na,na,3,20,na,yes,no,na,
