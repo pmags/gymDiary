@@ -52,6 +52,23 @@ CREATE TABLE IF NOT EXISTS exercises (
 	PRIMARY KEY (exer_id)
 );
 
+DROP TABLE IF EXISTS workouts;
+
+CREATE TABLE IF NOT EXISTS workouts(
+	wk_id BINARY(16) NOT NULL ,
+	wk_timestamp_creation DATETIME ,
+	wk_timestamp_update DATETIME ,
+	user_id VARCHAR(255) ,
+	wk_name VARCHAR(255) ,
+	wk_template_flag TINYINT ,
+	wk_timecap INT ,
+	wk_type VARCHAR(255) ,
+	wk_comments TEXT ,
+	wk_date DATE ,
+	PRIMARY KEY(wk_id)
+	
+);
+
 
 /*** TRIGGERS ***/
 
@@ -64,6 +81,11 @@ CREATE TRIGGER before_insert_logs
   BEFORE INSERT ON exercises
   FOR EACH ROW
   SET new.exer_id = uuid();
+ 
+  CREATE TRIGGER before_insert_workouts
+  BEFORE INSERT ON workouts
+  FOR EACH ROW
+  SET new.wk_id = uuid();
 
  
 /**** FOREIGN KEYS ***/
