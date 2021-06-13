@@ -69,6 +69,29 @@ CREATE TABLE IF NOT EXISTS workouts(
 	
 );
 
+DROP TABLE IF EXISTS body_parts;
+
+CREATE TABLE IF NOT EXISTS body_parts(
+	bodypart_id BINARY(16) ,
+	bodypart_timestamp_creation DATETIME ,
+	bodypart_timestamp_update DATETIME ,
+	user_id VARCHAR(255) ,
+	bodypart_name VARCHAR(255) ,
+	bodypart_image LONGBLOB ,
+	PRIMARY KEY(bodypart_id)
+);
+
+DROP TABLE IF EXISTS equipments;
+
+CREATE TABLE IF NOT EXISTS equipments(
+	equipment_id BINARY(16) ,
+	equipment_timestamp_creation DATETIME ,
+	equipment_timestamp_update DATETIME ,
+	user_id VARCHAR(255) ,
+	equipment_name VARCHAR(255) ,
+	equipment_image LONGBLOB ,
+	PRIMARY KEY(equipment_id)
+);
 
 /*** TRIGGERS ***/
 
@@ -86,6 +109,16 @@ CREATE TRIGGER before_insert_logs
   BEFORE INSERT ON workouts
   FOR EACH ROW
   SET new.wk_id = uuid();
+ 
+ CREATE TRIGGER before_insert_body_parts
+  BEFORE INSERT ON body_parts
+  FOR EACH ROW
+  SET new.bodypart_id = uuid();
+ 
+ CREATE TRIGGER before_insert_equipments
+  BEFORE INSERT ON equipments
+  FOR EACH ROW
+  SET new.equipment_id = uuid();
 
  
 /**** FOREIGN KEYS ***/
